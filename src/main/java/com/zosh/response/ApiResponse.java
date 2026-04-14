@@ -6,4 +6,9 @@ import lombok.Data;
 public class ApiResponse {
 
  private String message;
+ private String status;
+ private String error;
+
+
+
 }

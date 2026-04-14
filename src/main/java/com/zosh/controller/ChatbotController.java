@@ -15,6 +15,8 @@ public class ChatbotController {
 
     @PostMapping
  public ResponseEntity<ApiResponse> getCoinDetails(@RequestBody PromptBody prompt) {
+
+
      ApiResponse response = new ApiResponse();
      response.setMessage(prompt.getPrompt());
      return new  ResponseEntity<>(response, HttpStatus.OK);
