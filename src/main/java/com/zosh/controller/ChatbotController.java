@@ -2,6 +2,7 @@ package com.zosh.controller;
 
 import com.zosh.dto.PromptBody;
 import com.zosh.response.ApiResponse;
+import com.zosh.service.ChatbotService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,8 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ai/chat")
 public class ChatbotController {
 
+
+    private final ChatbotService chatbotService;
+
+    public ChatbotController(ChatbotService chatbotService) {
+        this.chatbotService = chatbotService;
+    }
+
     @PostMapping
- public ResponseEntity<ApiResponse> getCoinDetails(@RequestBody PromptBody prompt) {
+ public ResponseEntity<ApiResponse> getCoinDetails(@RequestBody PromptBody prompt) throws Exception {
+       chatbotService.getCoinDetails(prompt.getPrompt());
 
 
      ApiResponse response = new ApiResponse();
