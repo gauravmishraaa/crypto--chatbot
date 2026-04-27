@@ -81,7 +81,7 @@ public class ChatbotServiceImpl implements ChatbotService {
     @Override
     public String simpleChat(String prompt) {
         String GEMINI_API_URL = "";
-        HttpHeaders headers = new HttpHeaders();
+        HttpHeaders headers = new HttpHeaders()
         headers.setContentType(MediaType.APPLICATION_JSON);
 //        String requestBody = new JSObject();
         return "";
